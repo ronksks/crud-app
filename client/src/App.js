@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     foodName: "",
     grade: "",
   });
+  const [foodList, setFoodList] = useState([]);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -20,6 +21,14 @@ function App() {
       };
     });
   }
+  //recives the information from the backend
+  //see the object in console response-> data
+  useEffect(() => {
+    Axios.get("http://localhost:3001/read").then((response) => {
+      setFoodList(response.data);
+      // console.log(response);
+    });
+  }, []);
 
   function handleSubmit() {
     Axios.post("http://localhost:3001/insert", { food: food });
@@ -34,6 +43,14 @@ function App() {
         <label>Grade:</label>
         <input type="number" name="grade" onChange={handleChange} />
         <button onClick={handleSubmit}>Submit</button>
+        <h1>Food List</h1>
+        {foodList.map((val, key) => {
+          return (
+            <div>
+              <h1>{val.foodName}</h1>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

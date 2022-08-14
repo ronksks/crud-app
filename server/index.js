@@ -32,7 +32,6 @@ app.post("/insert", async (req, res) => {
 });
 
 app.get("/read", async (req, res) => {
-
   FoodModel.find({}, (err, result) => {
     if (err) {
       res.send(err);
@@ -42,27 +41,17 @@ app.get("/read", async (req, res) => {
 });
 
 app.delete("/delete/:id", async (req, res) => {
-const id = req.params.id;
-  // console.log(req.params.id);
-  // FoodModel.find({}, (err, result) => {
-  //   if (err) {
-  //     res.send(err);
-  //   }
-  //   const idFromDb = result.filter((id) => id == req.params.id);
-  //   // console.log(idFromDb.grade);
-  //   // console.log(idFromDb);
-  // });
-  await FoodModel.findByIdAndRemove(req.params.id).exec();
-console.log(id +" deleted");
+  const id = req.params.id;
+  
+  await FoodModel.findByIdAndRemove(id).exec();
+
+  FoodModel.findById(id, (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    console.log(result.foodName + " was deleted");
+  });
 });
-
-// FoodModel.findByIdAndRemove()
-// const { id, foodName } = req.body.food;
-
-// const id = mongoose.Types.ObjectId(req.params.id.trim());
-// console.log(req.params.id);
-
-
 
 app.listen(3001, () => {
   console.log("Server is running on port 3001..");

@@ -39,6 +39,7 @@ function App() {
   
   function deleteFood(id){
 // to pass id as parameter, we change the "url" => `url` and add the $(param)
+// console.log(id);
     Axios.delete(`http://localhost:3001/delete/${id}`);
 
 
@@ -58,13 +59,14 @@ function App() {
           return (
             <Food
               key={index}
-              id={index}
+              id={foodItem._id}
               foodName={foodItem.foodName}
               grade={foodItem.grade}
               //we pass to the note an attribute that contains a deleteNote function
               // then we can access it trought the props inside the note itself
-              onDelete={deleteFood(foodItem._id)}
+              onDelete={deleteFood}
             />
+            
           );
 
 

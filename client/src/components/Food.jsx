@@ -4,7 +4,9 @@ function Food(props) {
   function handleDelete() {
     // the food ID is sent back trough the props to the
     //onDelete func in app.jsx
+    // console.log(props.id);
     props.onDelete(props.id);
+
   }
 
   return (

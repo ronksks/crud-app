@@ -1,16 +1,91 @@
 .App {
   text-align: center;
+
+}
+.header{
+  padding: "10px 20px";
+  text-align: "center";
+  color: "green";
+}
+.header h1{
+  font-style: italic;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: "#44014C";
+
 }
 .form{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
+  background: #fff;
+  border-radius: 7px;
+  padding: 10px;
+  width: 240px;
+  box-shadow: 0 2px 5px #ccc;
 
+}
 .form input,button{
+margin-top: 10px;
   width: 150;
   height: 30;
   margin: 10;
   font-size: 15px;
+  
+}
+.form button{
+  min-height: 50px;
+  width: auto;
+  border-color: transparent;
+  color: #3d95e1;
+  font-size: 30px;
+  padding-bottom: 6px;
+  border-width: 6px;
+  border-radius: 8px;
+
+}
+
+
+
+
+
+.food  {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+
+
+
+}
+.food h1{
+font-size: 20px;
+font-weight: 200;
+}
+
+.food button:hover{
+  transition-duration: 0.4s;
+
+  background-color: #39493a; /* Green */
+  color: white;
+  border-radius: 7px;
+
+  padding-bottom: auto;
+  border-width: 6px;
+  border-radius: 8px;
+}
+
+.foodItem{
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+
+
 }

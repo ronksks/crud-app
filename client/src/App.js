@@ -27,6 +27,9 @@ function App() {
   //also you can map trough the data and present it
   useEffect(() => {
     Axios.get("http://localhost:3001/read").then((response) => {
+      // if(response.data= null){
+      //   setFoodList("");
+      // }
       setFoodList(response.data);
     });
   }, [foodList]);

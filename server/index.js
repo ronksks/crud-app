@@ -42,15 +42,22 @@ app.get("/read", async (req, res) => {
 
 app.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
-  
-  await FoodModel.findByIdAndRemove(id).exec();
-
+  var foundFoodNameToDelete = "";
   FoodModel.findById(id, (err, result) => {
     if (err) {
       res.send(err);
+    } else {
+      try {
+        foundFoodNameToDelete = result.foodName;
+      } catch (err) { console.log(err); }
     }
-    console.log(result.foodName + " was deleted");
   });
+  try {
+    await FoodModel.findByIdAndRemove(id).exec();
+    console.log(foundFoodNameToDelete + " was deleted");
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.listen(3001, () => {

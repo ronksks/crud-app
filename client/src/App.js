@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Food from "./components/Food";
-
+// import DeleteIcon from '@mui/icons-material/Delete';
 
 function App() {
   const [food, setFood] = useState({
@@ -72,8 +72,10 @@ function App() {
             onChange={handleChange}
             value={food.grade}
           />
+
           <button onClick={handleSubmit}>Submit</button>
-          {/* <DeleteIcon /> */}
+
+                  {/* <DeleteIcon /> */}
         </div>
         <div>
           <h1>Food List</h1>

@@ -30,7 +30,7 @@ function App() {
   //see the object in console response-> data
   //also you can map trough the data and present it
   useEffect(() => {
-    Axios.get("/read").then((response) => {
+    Axios.get("http://localhost:3001/read").then((response) => {
       // if(response.data= null){
       //   setFoodList("");
       // }
@@ -39,7 +39,7 @@ function App() {
   }, [foodList]);
 
   function handleSubmit() {
-    Axios.post("/insert", { food: food });
+    Axios.post("http://localhost:3001/insert", { food: food });
     setFood(() => {
       return {
         foodName: "",
@@ -50,10 +50,12 @@ function App() {
 
   function deleteFood(id) {
     // to pass id as parameter, we change the "url" => `url` and add the $(param)
-    Axios.delete(`/delete/${id}`);
+    // Axios.delete(`/delete/${id}`);
+    Axios.delete(`http://localhost:3001/delete/${id}`);
+
   }
   function updateFood(id, newFoodName) {
-    Axios.put("/update", { id: id, newFoodName });
+    Axios.put("http://localhost:3001/update", { id: id, newFoodName });
   }
   // "https://rate-your-food.herokuapp/update"
   return (

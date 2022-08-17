@@ -20,9 +20,7 @@ app.post("/insert", async (req, res) => {
     foodName: foodName,
     grade: grade,
   });
-  // food.save().then(result => { console.log(result);}).catch(err => console.log(err));
-  // await food.find({ foodName: 'john', age: { $gte: 18 } }).exec();
-
+  
   try {
     await food.save();
     console.log(food.foodName + " was added to foodDB successuly");

@@ -76,6 +76,9 @@ app.put("/update", async (req, res) => {
   console.log("Updated food: ", newFoodName);
 });
 
-app.listen(3001, () => {
-  console.log("Server is running on port 3001..");
+app.listen(process.env.PORT, function() {
+  console.log("Server has started on port 3000");
 });
+// app.listen(3001, () => {
+//   console.log("Server is running on port 3001..");
+// });

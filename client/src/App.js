@@ -2,13 +2,15 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Food from "./components/Food";
-// import DeleteIcon from '@mui/icons-material/Delete';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { TextField } from "@mui/material";
 
 function App() {
   const [food, setFood] = useState({
     foodName: "",
     grade: "",
   });
+
   const [foodList, setFoodList] = useState([]);
 
   function handleChange(e) {
@@ -23,6 +25,7 @@ function App() {
       };
     });
   }
+
   //recives the information from the backend
   //see the object in console response-> data
   //also you can map trough the data and present it
@@ -49,6 +52,9 @@ function App() {
     // to pass id as parameter, we change the "url" => `url` and add the $(param)
     Axios.delete(`http://localhost:3001/delete/${id}`);
   }
+  function updateFood(id, newFoodName) {
+    Axios.put("http://localhost:3001/update", { id: id, newFoodName });
+  }
 
   return (
     <div className="App">
@@ -58,24 +64,26 @@ function App() {
 
       <div className="layout">
         <div className="form">
-          <lable>Food Name:</lable>
-          <input
-            type="text"
-            name="foodName"
-            onChange={handleChange}
+          <TextField
             value={food.foodName}
-          />
-          <label>Grade:</label>
-          <input
-            type="number"
-            name="grade"
             onChange={handleChange}
-            value={food.grade}
+            name="foodName"
+            id="standard-basic"
+            label="Food Name"
+            variant="standard"
           />
+          <TextField
+            value={food.grade}
+            onChange={handleChange}
+            name="grade"
+            type="number"
+            id="standard-basic"
+            label="Grade"
+            variant="standard"
+          />
+          <AddCircleOutlineIcon id="addButton" onClick={handleSubmit} />
 
-          <button onClick={handleSubmit}>Submit</button>
-
-                  {/* <DeleteIcon /> */}
+          {/* <DeleteIcon /> */}
         </div>
         <div>
           <h1>Food List</h1>
@@ -91,6 +99,7 @@ function App() {
                     //we pass to the food item an attribute that contains a deleteFood function
                     // then we can access it trought the props inside the food item itself
                     onDelete={deleteFood}
+                    onUpdate={updateFood}
                   />
                 </div>
               );

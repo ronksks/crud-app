@@ -1,16 +1,12 @@
 .App {
   text-align: center;
-  background-color: salmon;
+  background-color: #ffc18e;
   /* width: 70%; */
   max-width: 70%;
   margin: auto;
   font-size: calc(10px + 2vmin);
 }
-.header {
-  padding: "10px 20px";
-  text-align: "center";
-  color: "green";
-}
+
 .header h1 {
   font-style: italic;
   padding-top: 20px;
@@ -21,7 +17,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: "#44014C";
 }
 .form {
   display: flex;
@@ -33,47 +28,32 @@
   width: 240px;
   box-shadow: 0 2px 5px #ccc;
   font-size: calc(10px + 2vmin);
+  background-color: #ffd39a;
 }
-.form input,
-button {
-  margin-top: 10px;
-  width: 150;
-  height: 30;
-  margin: 10;
-  font-size: 15px;
-}
-.form button {
-  min-height: 50px;
-  width: auto;
-  border-color: transparent;
-  color: #3d95e1;
-  font-size: 30px;
-  padding-bottom: 6px;
-  border-width: 6px;
-  border-radius: 8px;
+#addButton{
+margin-top:  10px;
 }
 
 .food {
   background: #fff;
   border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 3px 5px #ccc;
   padding: 10px;
   width: 240px;
   margin: 16px;
   float: left;
+  background-color: #ffd39a;
 }
 .food h1 {
   font-size: calc(10px + 2vmin);
-  font-weight: 200;
+  font-weight: 50;
 }
 
 .food button:hover {
   transition-duration: 0.4s;
-
-  background-color: #39493a; /* Green */
+  background-color: #3f463f; /* Green */
   color: white;
   border-radius: 7px;
-
   padding-bottom: auto;
   border-width: 6px;
   border-radius: 8px;
@@ -81,5 +61,12 @@ button {
 
 .foodItem {
   box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
+  /* padding: 10px; */
+}
+
+.foodIcons {
+  margin-left: 80%;
+  margin-bottom: ;
+  
+
 }

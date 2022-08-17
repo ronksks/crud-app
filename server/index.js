@@ -49,7 +49,9 @@ app.delete("/delete/:id", async (req, res) => {
     } else {
       try {
         foundFoodNameToDelete = result.foodName;
-      } catch (err) { console.log(err); }
+      } catch (err) {
+        console.log(err);
+      }
     }
   });
   try {
@@ -58,6 +60,20 @@ app.delete("/delete/:id", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+app.put("/update", async (req, res) => {
+  //recive the id and the new name to update the currect id with the new name
+  const { id, newFoodName } = req.body;
+
+  try {
+    // look for the id and set the value of the foodName field to the new foodName,
+    //include a callback function the handels the err
+    await FoodModel.findByIdAndUpdate(id, { foodName: newFoodName });
+  } catch (err) {
+    console.log(err);
+  }
+  console.log("Updated food: ", newFoodName);
 });
 
 app.listen(3001, () => {

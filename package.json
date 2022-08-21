@@ -3,9 +3,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "styled-components": "^5.3.5"
-  },
-  "scripts": {
-    "start": "node server/server.js"
-}
+  }
+
 }
 

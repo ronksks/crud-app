@@ -1,5 +1,5 @@
 # rate-your-food
-This in a reate your food app
+This is a Rate your food app
 *****************************
 The app written in react and in node js.
 

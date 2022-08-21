@@ -56,6 +56,7 @@ function App() {
   }
   function updateFood(id, newFoodName) {
     Axios.put("http://localhost:3001/update", { id: id, newFoodName });
+    // add update textField after update
   }
   // "https://rate-your-food.herokuapp/update"
   // test('should first', () => { second })

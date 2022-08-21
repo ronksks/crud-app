@@ -77,6 +77,16 @@ app.put("/update", async (req, res) => {
 // app.listen(process.env.PORT, function() {
 //   console.log("Server has started on port 3000");
 // });
-app.listen(3001, () => {
-  console.log("Server is running on port 3001..");
+// app.listen(3001, () => {
+//   console.log("Server is running on port 3001..");
+// });
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+// app.listen(port);
+
+app.listen(port, function () {
+  console.log("Server has started on port " + port);
 });

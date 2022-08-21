@@ -1,3 +1,4 @@
+// require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -11,7 +12,13 @@ mongoose.connect(
     useNewUrlParser: true,
   }
 );
-
+// mongoose.connect(
+//   "mongodb+srv://"+process.env.DB_USERNAME+":"+process.env.DB_PASSWORD+"@"+process.env.DB_HOST,
+//   {
+//     useNewUrlParser: true,
+//   }
+// );
+// console.log(process.env);
 app.post("/insert", async (req, res) => {
   const { foodName, grade } = req.body.food;
 

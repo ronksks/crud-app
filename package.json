@@ -10,7 +10,7 @@
     "node": "16.16.0"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"cd backend && nodemon server\"",
+    "start": "concurrently \"react-scripts start\" \"cd backend && nodemon server\""
   
   }
 }

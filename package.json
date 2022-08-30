@@ -2,12 +2,15 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "concurrently": "^7.3.0",
     "styled-components": "^5.3.5"
   },
   "engines": {
     "npm": "8.11.0",
     "node": "16.16.0"
   }
+},
+"scripts": {
+  "start": "concurrently \"react-scripts start\" \"cd backend && nodemon server\"",
 
-}
-
+},

@@ -3,6 +3,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "concurrently": "^7.3.0",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.5"
   },
   "engines": {
@@ -13,12 +14,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"  },
+    "eject": "react-scripts eject"
+  },
   "name": "crud-app",
   "description": "This is a Rate your food app\r *****************************\r The app written in react and in node js.",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ronksks/rate-your-food.git"
